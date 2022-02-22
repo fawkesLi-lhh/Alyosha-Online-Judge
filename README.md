@@ -1,6 +1,8 @@
 # Alyosha-Online-Judge
 
-这是一个高效的服务器，在作者电脑上能达到 11w QPS 同一电脑上Nginx只有3w QPS（作者电脑配置很低，tinywebserver仅1.2wQPS）
+//这个oj还未完善，不能正确的判题
+
+但它现在一个高效的服务器，在作者电脑上能达到 11w QPS 同一电脑上Nginx只有3w QPS（作者电脑配置很低，tinywebserver仅1.2wQPS）
 
 • 真正的异步编程（io_uring proactor）
 
