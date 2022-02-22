@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Alyosha
+    </title>
+</head>
+
+<body>
+    <h1>
+        Alyosha Online Judge
+    </h1>
+    <a href="index.html" style="display: inline-block; text-align: center; width: 32%;">problems</a>
+    <a href="contest.html" style="display: inline-block; text-align: center; width: 32%;">contest</a>
+    <a href="status.html" style="display: inline-block; text-align: center; width: 32%;">status</a>
+    <hr>
+    <form action="Login" method="POST" style="text-align: center;">
+        <p style="display: inline-block;">username:<input type="text" name="username" type="radio" maxlength="16" id="user"></p>
+        <p style="display: inline-block;">password:<input type="text" name="password" type="radio" maxlength="16" id="pwd"></p>
+        <p style="display: inline-block;">
+            <button type="button" id="btn">login</button>
+        </p>
+    </form>
+    <a href="problem/0001.html" style="text-align: center; width: 100%;">
+        <h4>
+            001 A+B Problem
+        </h4>
+    </a>
+    <a href="problem/0002.html" style="text-align: center; width: 100%;">
+        <h4>
+            002 Exponentiation
+        </h4>
+    </a>
+    <a href="problem/0003.html" style=" text-align: center; width: 100%;">
+        <h4>
+            003 487-3279
+        </h4>
+    </a>
+    <a href="problem/0003.html" style=" text-align: center; width: 100%;">
+        <h4>
+            004 Financial Management
+        </h4>
+    </a>
+    <a href="problem/0003.html" style=" text-align: center; width: 100%;">
+        <h4>
+            005 I Think I Need a Houseboat
+        </h4>
+    </a>
+    <a href="problem/0003.html" style=" text-align: center; width: 100%;">
+        <h4>
+            006 Biorhythms
+        </h4>
+    </a>
+
+    <H5 align="center"> &copy;Fawkes Li</H5>
+</body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script>
+    var btn = document.getElementById("btn");
+    var user = document.getElementById("user");
+    var pwd = document.getElementById("pwd");
+    btn.onclick = function() {
+        $.ajax({
+            url: "http://"+window.location.host+"/Login",
+            type: "POST",
+            data: {
+                "username": user.value,
+                "passward": pwd.value
+            },
+            dataType: "json",
+            success: function(res) {
+                console.log(res);
+            }
+        });
+    }
+</script>
+
+</html>

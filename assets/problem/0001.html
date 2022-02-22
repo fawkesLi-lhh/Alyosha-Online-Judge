@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        p1
+    </title>
+</head>
+
+<body>
+    <h1>
+        Alyosha Online Judge
+    </h1>
+    <a href="../index.html" style="display: inline-block; text-align: center; width: 32%;">problems</a>
+    <a href="../contest.html" style="display: inline-block; text-align: center; width: 32%;">contest</a>
+    <a href="../status.html" style="display: inline-block; text-align: center; width: 32%;">status</a>
+    <hr>
+    <h4 style="text-align: center;">A+B Problem
+        Time Limit: 1000MS		Memory Limit: 10000K</h4>
+        <h5></h5>
+<h5 style="text-indent: 5cm">Description</h5>
+<h5 style="text-indent: 5cm">Calculate a+b</h5>
+<h5> &nbsp;</h5>
+
+<h5 style="text-indent: 5cm">Input</h5>
+<h5 style="text-indent: 5cm">Two integer a,b (0<=a,b<=10)</h5>
+<h5> &nbsp;</h5>
+<h5 style="text-indent: 5cm">Output</h5>
+<h5 style="text-indent: 5cm">Output a+b</h5>
+<h5> &nbsp;</h5>
+<h5 style="text-indent: 5cm">Sample Input</h5>
+<h5 style="text-indent: 5cm">1 2</h5>
+<h5> &nbsp;</h5>
+<h5 style="text-indent: 5cm">    Sample Output</h5>
+<h5 style="text-indent: 5cm">3</h5>
+<form method="post" style="text-indent: 5cm">
+    <textarea rows="20" cols="60" id="textcode">input your code </textarea>
+    <p  style="text-indent: 5cm">
+        <button type="button" id="btn">
+            submit</button>
+    </p>
+    
+</form>
+    <H5 align="center"> &copy;Fawkes Li</H5>
+</body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script>
+    var btn = document.getElementById("btn");
+    var code = document.getElementById("textcode");
+    btn.onclick = function() {
+        console.log(code.value);
+        $.ajax({
+            url: "http://"+window.location.host+"/Submit",
+            type: "POST",
+            data: {
+                "code": code.value,
+            },
+            dataType: "json",
+            success: function(res) {
+                console.log(res);
+            }
+        });
+    }
+</script>
+
+</html>
