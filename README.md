@@ -61,7 +61,7 @@ sudo ./Alyosha
 点击login后按F12可在浏览器命令行下看到{'aaa':'ok'}
 
 性能测试：
-# Third_Part/webbench-1.5目录下
+Third_Part/webbench-1.5目录下
 ./webbench -c 10500 -t 5 http://192.168.1.6:9856/
 
 
