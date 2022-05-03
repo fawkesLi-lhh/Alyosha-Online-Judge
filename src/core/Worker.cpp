@@ -10,6 +10,9 @@
 #include <errno.h>
 #include <math.h>
 
+#include <thread>
+#include <chrono>
+
 #include "Worker.h"
 
 void Worker::loopWorker(){
@@ -24,11 +27,15 @@ void Worker::loopWorker(){
             temp->m_eventType = EVENT_TYPE_READ;
             uring.addRead(temp,temp->m_fd);
             uring.addRecvSocketFd(&event_for_recvmsg,m_handle.pipefd);
+            //printf("come\n");
             break;
         case EVENT_TYPE_READ:
             if(event->m_res == 0){
-                event->m_eventType = EVENT_TYPE_END;
+                //event->m_eventType = EVENT_TYPE_END;
+                close(event->m_fd);
+                eventPool.freeObject(event);
                 fprintf(stderr, "Empty request!\n");
+                continue;
             }
             completeEvent(event);
             break;
@@ -46,6 +53,7 @@ void Worker::loopWorker(){
 }
 
 void Worker::completeEvent(EventPackage* event){
+    //event->m_eventType = EVENT_TYPE_END;
     processEvent(event);
     switch(event->m_eventType){
     case EVENT_TYPE_READ:
@@ -58,6 +66,8 @@ void Worker::completeEvent(EventPackage* event){
         uring.addWritev(event,event->m_fd,event->ioves,event->iovec_cnt);
         break;
     case EVENT_TYPE_END:
+        //uring.addRead(event,event->m_fd);
+        //::std::this_thread::sleep_for(::std::chrono::milliseconds(50));
         close(event->m_fd);
         eventPool.freeObject(event);
         break;

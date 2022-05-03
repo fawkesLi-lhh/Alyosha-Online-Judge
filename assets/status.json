@@ -1,0 +1,19 @@
+[{
+  "judgeId": "1000",
+  "Title": "A+B Problem",
+  "User": "fawkes",
+  "result": "accpet"
+},
+{
+  "judgeId": "1001",
+  "result": "wa",
+  "Title": "A+B Problem",
+  "User": "fawkes"
+},
+{
+  "judgeId": "1002",
+  "result": "wa",
+  "Title": "A+B Problem",
+  "User": "fawkes"
+}
+]

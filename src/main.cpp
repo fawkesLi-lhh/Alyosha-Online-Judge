@@ -8,11 +8,14 @@
 #include <iostream>
 
 #include "Master.h"
-#include "Request.h"
 #include "Config.h"
-#include "MysqlRAII.h"
+
+#include "EventPackage.h"
+#include "HttpStatus.h"
 
 using namespace std;
+
+
 
 signed main(){
     Master master;

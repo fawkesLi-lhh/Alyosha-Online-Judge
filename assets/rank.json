@@ -1,0 +1,34 @@
+[{
+  "teamId": "1002",
+  "punishment": "25662",
+  "P1": "accpet",
+  "P2": "accpet",
+  "P3": "accpet",
+  "P4": "accpet",
+  "P5": "accpet",
+  "P6": "accpet",
+  "P7": "accpet"
+},
+{
+  "teamId": "1001",
+  "punishment": "262",
+  "P1": "accpet",
+  "P2": "wa",
+  "P3": "accpet",
+  "P4": "accpet",
+  "P5": "accpet",
+  "P6": "wa",
+  "P7": "accpet"
+},
+{
+  "teamId": "1000",
+  "punishment": "6465",
+  "P1": "accpet",
+  "P2": "wa",
+  "P3": "accpet",
+  "P4": "accpet",
+  "P5": "wa",
+  "P6": "accpet",
+  "P7": "wa"
+}
+]

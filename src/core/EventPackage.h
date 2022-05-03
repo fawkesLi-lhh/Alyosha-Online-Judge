@@ -9,6 +9,9 @@ const int BUFFER_SIZE = 8192;
 const int EVENT_PACKAGE_POOL_MAX_SIZE = 1000;
 const int MAX_IOVE_COUNT = 5;
 
+const int RESPONSER_BUFFER_HEAD_LENGTH = 2048;
+const int RESPONSER_BUFFER_BODY_LENGTH = 16384;
+
 enum EVENT_TYPE{
     EVENT_TYPE_ACCEPT=0,
     EVENT_TYPE_READ=1,
@@ -25,6 +28,10 @@ struct EventPackage{
     int m_res;
     char m_buffer[BUFFER_SIZE];
     int len;
+    char head[RESPONSER_BUFFER_HEAD_LENGTH];
+    int head_len;
+    char body[RESPONSER_BUFFER_BODY_LENGTH];
+    int body_len;
     iovec ioves[MAX_IOVE_COUNT];
     int iovec_cnt;
     void* user_data;
